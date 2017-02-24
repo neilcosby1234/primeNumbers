@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   </head>
+   <body>
+      <script>
+       $(document).ready(function() {
+    $("#primeNumbers").click(function() {
+	   function init() {
+         var html='';
+         	$.ajax({
+         	type: "POST",
+         	url: "primeNumbers.php",
+         	datatype: 'JSON',
+                 success: function (data) {
+                     for(var key in data) {
+                     var value = data[key];
+                         html+='<div>'+value+'</div>'
+                     }
+                     $("#data").append(html);
+                     
+                 }
+         
+         });
+         };
+         init();
+         });
+         });
+         
+   </script>
+   <div id = "primeNumbers"> <a href = "#"  id = "solution0">load with JQuery </a></div> <br>
+
+      <div id="data"></div>
+   </body>
+</html>
+
