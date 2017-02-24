@@ -13,6 +13,9 @@ function prima($n)
 				$counter++;
 				}
 			}
+			if (count($primeNumbers) == 1000){ // stop the loop once the count is at 1000
+				break;
+			}
 
 		if ($counter == 2)
 			{
@@ -24,7 +27,7 @@ function prima($n)
 	}
 
 header('Content-Type: application/json'); // tell browser what to expect
-echo prima(1000); // echo the json string returned from function
+echo prima(10000); // echo the json string returned from function
 
 ?>
 
